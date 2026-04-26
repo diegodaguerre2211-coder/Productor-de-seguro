@@ -1,35 +1,50 @@
-[README.txt](https://github.com/user-attachments/files/27095156/README.txt)
-ROBERTO OCHOA SEGUROS - Instrucciones de subida
-================================================
+# 🛡️ Roberto Ochoa Seguros
 
-ARCHIVOS INCLUIDOS:
-- index.html (tu página web completa)
-- README.txt (este archivo)
+**Productor Asesor de Seguros Independiente**
 
-IMPORTANTE:
-Necesitás agregar tu foto a esta carpeta y renombrarla como:
-    foto-roberto.jpg
+Sitio web profesional para cotización de seguros en todo el territorio argentino.
 
-La página está configurada para buscar ese nombre exacto.
+---
 
-OPCIONES PARA SUBIR GRATIS:
+## 📋 Servicios
 
-1. NETLIFY (La más fácil)
-   - Andá a https://www.netlify.com
-   - Creá una cuenta gratis
-   - Arrastrá esta carpeta completa a la página
-   - Listo, en 30 segundos tenés tu sitio online
+- 🚗 **Auto** — Desde responsabilidad civil hasta todo riesgo
+- 🏍️ **Moto** — Cobertura integral y asistencia en ruta
+- 🚲 **Bicicleta** — Contra robo, daños y accidentes
+- 🏠 **Casa** — Protección contra incendio, robo e inundaciones
+- ❤️ **Vida** — Tranquilidad para vos y tu familia
+- 🏥 **Prepagas** — Medicina privada, planes individuales y familiares
 
-2. GITHUB PAGES
-   - Creá cuenta en https://github.com
-   - Creá un repositorio nuevo
-   - Subí estos archivos
-   - Activá GitHub Pages en Settings
+---
 
-3. VERCEL
-   - Andá a https://vercel.com
-   - Arrastrá la carpeta
-   - Listo
+## 🌎 Cobertura Nacional
 
-¿PREGUNTAS?
-Contactame si necesitás ayuda.
+Atención en las **23 provincias** de Argentina. Cotización y gestión 100% online.
+
+---
+
+## 📞 Contacto
+
+| Medio | Dato |
+|-------|------|
+| **WhatsApp** | [+54 9 299 521-2821](https://wa.me/5492995212821) |
+| **Teléfono** | +54 9 299 521-2821 |
+| **Email** | roberto@segurosochoa.com.ar |
+
+---
+
+## 🌐 Sitio web
+
+👉 **[Ver sitio online](https://diegodaguerre2211-coder.github.io/Productor-de-seguro/)**
+
+---
+
+## 🏢 Aseguradoras con las que trabajamos
+
+**Seguros:** Sancor, Federación Patronal, La Caja, Provincia Aseguradora, Rivadavia, San Cristóbal, Zurich, Allianz, Mapfre, Mercantil Andina, HDI, Orbis, Nación Seguros, Experta.
+
+**Prepagas:** OSDE, Swiss Medical, Galeno, Medicus, Omint, Sancor Salud, Avalian, Luis Pasteur, Hospital Italiano, Medifé, PAMI Plus, DOCTHOS.
+
+---
+
+© 2026 Roberto Ochoa Seguros — Todos los derechos reservados.
