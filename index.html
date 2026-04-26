@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto Ochoa Seguros — Protegé lo que más querés</title>
+    <meta name="description" content="Productor asesor de seguros en Argentina. Auto, moto, bici, casa, vida y prepagas. Atención en todo el país. Cotizá gratis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --accent: #0d6efd;
+            --accent-dark: #0b5ed7;
+            --surface: #ffffff;
+            --border: #e5e5e5;
+            --shadow: 0 4px 24px rgba(0,0,0,0.06);
+            --success: #198754;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250,250,250,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(180deg, #f0f7ff 0%, var(--bg) 100%);
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-left {
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--success);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero-country {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .hero-tags span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.85rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-photo {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 4px solid var(--surface);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13,110,253,0.25);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,211,102,0.25);
+        }
+
+        .btn-call {
+            background: var(--text);
+            color: white;
+        }
+
+        .btn-call:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(13,110,253,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Companies */
+        .companies-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .company-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            transition: all 0.2s;
+        }
+
+        .company-card:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .company-card.prepaga {
+            background: rgba(25,135,84,0.05);
+            border-color: rgba(25,135,84,0.2);
+        }
+
+        .company-card.prepaga:hover {
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .companies-label {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .label-seguro {
+            background: rgba(13,110,253,0.1);
+            color: var(--accent);
+        }
+
+        .label-prepaga {
+            background: rgba(25,135,84,0.1);
+            color: var(--success);
+        }
+
+        /* Vision */
+        .vision-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4f8 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .vision-box p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .map-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .map-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .map-dot {
+            fill: var(--accent);
+            animation: mapPulse 2s infinite;
+            cursor: pointer;
+        }
+
+        .map-dot:nth-child(2) { animation-delay: 0.3s; }
+        .map-dot:nth-child(3) { animation-delay: 0.6s; }
+        .map-dot:nth-child(4) { animation-delay: 0.9s; }
+        .map-dot:nth-child(5) { animation-delay: 1.2s; }
+        .map-dot:nth-child(6) { animation-delay: 1.5s; }
+
+        @keyframes mapPulse {
+            0%, 100% { r: 4; opacity: 1; }
+            50% { r: 6; opacity: 0.6; }
+        }
+
+        .map-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-info p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .map-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .map-stat {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .map-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .map-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        .map-provinces {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .map-province-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(13,110,253,0.1);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.1;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-seguro {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(13,110,253,0.1);
+            color: var(--accent);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+
+        .contact-method:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .contact-method-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            transition: all 0.3s;
+            z-index: 99;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: #aaa;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-name {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-role {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-left {
+                text-align: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                width: 260px;
+                height: 320px;
+            }
+
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Roberto Ochoa Seguros</div>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#aseguradoras">Aseguradoras</a></li>
+                <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://wa.me/5492995212821" class="nav-cta" target="_blank">Cotizá ahora</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-badge">Disponible para cotizar</div>
+                <h1>Protegé lo que <span>más querés</span></h1>
+                <p class="hero-sub">Productor Asesor de Seguros Independiente</p>
+                <div class="hero-country">🇦🇷 Atención en todo el país</div>
+                <div class="hero-tags">
+                    <span>🚗 Auto</span>
+                    <span>🏍️ Moto</span>
+                    <span>🚲 Bici</span>
+                    <span>🏠 Casa</span>
+                    <span>❤️ Vida</span>
+                    <span>🏥 Prepaga</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://wa.me/5492995212821?text=Hola%20Roberto,%20quiero%20cotizar%20un%20seguro" class="btn btn-whatsapp" target="_blank">
+                        💬 Cotizá por WhatsApp
+                    </a>
+                    <a href="tel:+5492995212821" class="btn btn-call">
+                        📞 Llamame ahora
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="foto-roberto.jpg" alt="Roberto Ochoa - Productor Asesor de Seguros" class="hero-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios">
+        <div class="section-header reveal">
+            <h2>¿Qué te cubro?</h2>
+            <p>Seguros para cada momento de tu vida</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">🚗</div>
+                <h3>Auto</h3>
+                <p>Desde responsabilidad civil hasta todo riesgo. Cobertura nacional y asistencia las 24 horas.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🏍️</div>
+                <h3>Moto</h3>
+                <p>Protegé tu medio de transporte con cobertura integral y asistencia en ruta.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🚲</div>
+                <h3>Bicicleta</h3>
+                <p>Cobertura contra robo, daños y accidentes. Ideal para ciclistas urbanos y deportistas.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🏠</div>
+                <h3>Casa</h3>
+                <p>Protegé tu hogar contra incendio, robo, inundaciones y responsabilidad civil.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">❤️</div>
+                <h3>Vida</h3>
+                <p>Tranquilidad para vos y tu familia. Cobertura por fallecimiento, invalidez y enfermedades graves.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">🏥</div>
+                <h3>Prepagas</h3>
+                <p>Acceso a la mejor medicina privada. Planes individuales, familiares y para empresas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies -->
+    <section class="companies-section" id="aseguradoras">
+        <div class="section-header reveal">
+            <h2>Con quiénes trabajamos</h2>
+            <p>Elegimos la mejor opción para vos entre las principales compañías del país</p>
+        </div>
+
+        <div class="reveal">
+            <span class="companies-label label-seguro">ASEGURADORAS</span>
+            <div class="companies-grid">
+                <div class="company-card">Sancor Seguros</div>
+                <div class="company-card">Federación Patronal</div>
+                <div class="company-card">La Caja</div>
+                <div class="company-card">Provincia Aseguradora</div>
+                <div class="company-card">Rivadavia Seguros</div>
+                <div class="company-card">San Cristóbal</div>
+                <div class="company-card">Zurich</div>
+                <div class="company-card">Allianz</div>
+                <div class="company-card">Mapfre</div>
+                <div class="company-card">Mercantil Andina</div>
+                <div class="company-card">HDI Seguros</div>
+                <div class="company-card">Orbis Seguros</div>
+                <div class="company-card">Nación Seguros</div>
+                <div class="company-card">Experta</div>
+                <div class="company-card">Seguros Rivadavia</div>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top: 3rem;">
+            <span class="companies-label label-prepaga">PREPAGAS</span>
+            <div class="companies-grid">
+                <div class="company-card prepaga">OSDE</div>
+                <div class="company-card prepaga">Swiss Medical</div>
+                <div class="company-card prepaga">Galeno</div>
+                <div class="company-card prepaga">Medicus</div>
+                <div class="company-card prepaga">Omint</div>
+                <div class="company-card prepaga">Sancor Salud</div>
+                <div class="company-card prepaga">Avalian</div>
+                <div class="company-card prepaga">Luis Pasteur</div>
+                <div class="company-card prepaga">Hospital Italiano</div>
+                <div class="company-card prepaga">Medifé</div>
+                <div class="company-card prepaga">PAMI Plus</div>
+                <div class="company-card prepaga">DOCTHOS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section>
+        <div class="vision-box reveal">
+            <h3>🛡️ Mi compromiso con vos</h3>
+            <p>Mi objetivo es que estés tranquilo sabiendo que lo que más querés está protegido. Trabajo con las principales aseguradoras y prepagas del país para encontrar la cobertura que se adapte a tus necesidades y presupuesto. Atiendo en todo el territorio argentino, sin importar dónde te encuentres. No vendo seguros: te acompaño a elegir la mejor protección para tu familia, tu patrimonio y tu salud.</p>
+        </div>
+    </section>
+
+    <!-- Map Coverage -->
+    <section class="map-section" id="cobertura">
+        <div class="section-header reveal">
+            <h2>Atención en todo el país</h2>
+            <p>Donde estés, estoy para ayudarte</p>
+        </div>
+        <div class="map-container reveal">
+            <div class="map-visual">
+                <svg class="map-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M80,20 L120,20 L130,40 L140,60 L135,80 L145,100 L140,120 L150,140 L145,160 L155,180 L150,200 L160,220 L155,240 L165,260 L160,280 L170,300 L165,320 L175,340 L170,360 L165,380 L155,390 L145,385 L135,390 L125,385 L115,390 L105,385 L95,380 L85,370 L75,360 L70,340 L65,320 L60,300 L55,280 L50,260 L45,240 L40,220 L35,200 L30,180 L35,160 L40,140 L45,120 L50,100 L55,80 L60,60 L65,40 L70,30 Z" 
+                          fill="none" stroke="#e5e5e5" stroke-width="2"/>
+                    <path d="M80,20 L120,20 L130,40 L140,60 L135,80 L145,100 L140,120 L150,140 L145,160 L155,180 L150,200 L160,220 L155,240 L165,260 L160,280 L170,300 L165,320 L175,340 L170,360 L165,380 L155,390 L145,385 L135,390 L125,385 L115,390 L105,385 L95,380 L85,370 L75,360 L70,340 L65,320 L60,300 L55,280 L50,260 L45,240 L40,220 L35,200 L30,180 L35,160 L40,140 L45,120 L50,100 L55,80 L60,60 L65,40 L70,30 Z" 
+                          fill="rgba(13,110,253,0.05)" stroke="var(--accent)" stroke-width="1.5"/>
+
+                    <circle class="map-dot" cx="85" cy="350" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="120" cy="340" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="100" cy="300" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="80" cy="260" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="130" cy="280" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="95" cy="220" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="110" cy="180" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="85" cy="140" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="115" cy="120" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="100" cy="80" r="4" fill="var(--accent)"/>
+                    <circle class="map-dot" cx="90" cy="50" r="4" fill="var(--accent)"/>
+                </svg>
+            </div>
+            <div class="map-info">
+                <h3>🇦🇷 Argentina completa</h3>
+                <p>Desde Jujuy hasta Tierra del Fuego. No importa en qué provincia vivas, puedo asesorarte y gestionar tu seguro a distancia.</p>
+                <div class="map-stats">
+                    <div class="map-stat">
+                        <div class="map-stat-number">23</div>
+                        <div class="map-stat-label">Provincias</div>
+                    </div>
+                    <div class="map-stat">
+                        <div class="map-stat-number">24h</div>
+                        <div class="map-stat-label">Disponible</div>
+                    </div>
+                    <div class="map-stat">
+                        <div class="map-stat-number">100%</div>
+                        <div class="map-stat-label">Online</div>
+                    </div>
+                    <div class="map-stat">
+                        <div class="map-stat-number">0km</div>
+                        <div class="map-stat-label">Distancia</div>
+                    </div>
+                </div>
+                <div class="map-provinces">
+                    <span class="map-province-tag">Buenos Aires</span>
+                    <span class="map-province-tag">Córdoba</span>
+                    <span class="map-province-tag">Santa Fe</span>
+                    <span class="map-province-tag">Mendoza</span>
+                    <span class="map-province-tag">Neuquén</span>
+                    <span class="map-province-tag">Tucumán</span>
+                    <span class="map-province-tag">Salta</span>
+                    <span class="map-province-tag">Entre Ríos</span>
+                    <span class="map-province-tag">Misiones</span>
+                    <span class="map-province-tag">Chubut</span>
+                    <span class="map-province-tag">y más...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonios">
+        <div class="section-header reveal">
+            <h2>Lo que dicen mis clientes</h2>
+            <p>Experiencias reales de personas que confiaron en mí</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Roberto me consiguió un seguro de auto mucho más barato que el que tenía, con mejor cobertura. Todo por WhatsApp, sin vueltas. Un genio.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">ML</div>
+                    <div class="testimonial-info">
+                        <h4>María Laura G.</h4>
+                        <span>Neuquén</span>
+                        <div class="testimonial-seguro">🚗 Seguro de Auto</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Necesitaba una prepaga para mi familia urgente. En 24 horas Roberto ya tenía comparadas todas las opciones y elegimos la mejor. Muy recomendable.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JP</div>
+                    <div class="testimonial-info">
+                        <h4>Juan Pablo R.</h4>
+                        <span>Buenos Aires</span>
+                        <div class="testimonial-seguro">🏥 Prepaga Familiar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Me robaron la bici y pensé que no me iban a cubrir. Roberto me guió paso a paso en el reclamo y en una semana tenía la plata en la cuenta. Excelente asesoramiento.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">FS</div>
+                    <div class="testimonial-info">
+                        <h4>Facundo S.</h4>
+                        <span>Córdoba</span>
+                        <div class="testimonial-seguro">🚲 Seguro de Bicicleta</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Contraté el seguro de casa por recomendación de un amigo. Cuando se inundó el garage, Roberto estuvo al pie del cañón gestionando todo. Servicio impecable.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CM</div>
+                    <div class="testimonial-info">
+                        <h4>Carolina M.</h4>
+                        <span>Rosario</span>
+                        <div class="testimonial-seguro">🏠 Seguro de Hogar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Hice el seguro de vida para tranquilidad de mi mujer e hijos. Roberto explicó todo con paciencia, sin tecnicismos. Ahora duermo más tranquilo.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DR</div>
+                    <div class="testimonial-info">
+                        <h4>Diego R.</h4>
+                        <span>Mendoza</span>
+                        <div class="testimonial-seguro">❤️ Seguro de Vida</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">Tenía la moto asegurada en otra compañía pagando una fortuna. Roberto me pasó opciones, cambié y ahorro $15.000 por mes. Súper recomendado.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LG</div>
+                    <div class="testimonial-info">
+                        <h4>Lucas G.</h4>
+                        <span>La Plata</span>
+                        <div class="testimonial-seguro">🏍️ Seguro de Moto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto">
+        <div class="section-header reveal">
+            <h2>¿Hablamos?</h2>
+            <p>Cotización sin cargo. Respondemos en minutos. Atención en todo el país 🇦🇷</p>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-info">
+                <h3>Contactame directo</h3>
+                <p>Elegí la forma que te resulte más cómoda. Estoy para ayudarte a proteger lo que más querés, estés donde estés en Argentina.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/5492995212821?text=Hola%20Roberto,%20quiero%20cotizar%20un%20seguro" class="contact-method" target="_blank">
+                        <div class="contact-method-icon" style="background: #25d36620; color: #25d366;">💬</div>
+                        <div>
+                            <div style="font-weight: 600;">WhatsApp</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">+54 9 299 521-2821</div>
+                        </div>
+                    </a>
+                    <a href="tel:+5492995212821" class="contact-method">
+                        <div class="contact-method-icon" style="background: rgba(26,26,26,0.1); color: var(--text);">📞</div>
+                        <div>
+                            <div style="font-weight: 600;">Llamada directa</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">+54 9 299 521-2821</div>
+                        </div>
+                    </a>
+                    <a href="mailto:roberto@segurosochoa.com.ar" class="contact-method">
+                        <div class="contact-method-icon" style="background: rgba(13,110,253,0.1); color: var(--accent);">✉️</div>
+                        <div>
+                            <div style="font-weight: 600;">Email</div>
+                            <div style="font-size: 0.85rem; color: var(--text-light);">roberto@segurosochoa.com.ar</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Dejame tu consulta</h3>
+                <form action="mailto:roberto@segurosochoa.com.ar" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacion">Provincia / Localidad</label>
+                        <input type="text" id="ubicacion" name="ubicacion" placeholder="¿Dónde estás?">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">¿Qué querés asegurar?</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Seleccioná una opción</option>
+                            <option value="auto">Auto</option>
+                            <option value="moto">Moto</option>
+                            <option value="bici">Bicicleta</option>
+                            <option value="casa">Casa</option>
+                            <option value="vida">Vida</option>
+                            <option value="prepaga">Prepaga</option>
+                            <option value="otro">Otro / Varias cosas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Consulta (opcional)</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Contame qué necesitás..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Enviar consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">Roberto Daniel Ochoa</div>
+        <div class="footer-role">Productor Asesor de Seguros — Atención en todo el país</div>
+        <p>📱 +54 9 299 521-2821 &nbsp;|&nbsp; ✉️ roberto@segurosochoa.com.ar</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">🇦🇷 Argentina — © 2026 Roberto Ochoa Seguros. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5492995212821?text=Hola%20Roberto,%20quiero%20cotizar%20un%20seguro" class="whatsapp-float" target="_blank" title="Cotizá por WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.position = 'absolute';
+            nav.style.top = '60px';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = 'white';
+            nav.style.flexDirection = 'column';
+            nav.style.padding = '1rem';
+            nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+        }
+    </script>
+</body>
+</html>
